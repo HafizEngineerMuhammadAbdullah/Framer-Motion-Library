@@ -51,24 +51,45 @@ const App = () => {
           ease: 'anticipate'
         }}
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgZmQHFlFZyGSHDaAqmKsvs1RwuVZcD2VhQ&s" alt="" />
-      <motion.div 
-       initial={{
-        x:0,
-        y:0
-       }}
-       animate={{
-         x:[0,800,800,0,0],
-         y:[0,0,300,300,0],
-         rotate: [0,360,0,-360,0]
-       }}
+      <motion.div
+        initial={{
+          x: 0,
+          y: 0
+        }}
+        animate={{
+          x: [0, 800, 800, 0, 0],
+          y: [0, 0, 300, 300, 0],
+          rotate: [0, 360, 0, -360, 0]
+        }}
 
-       transition={{
-        duration: 2,
-        delay: 1,
-        repeat: 2,
-        ease: 'anticipate'
-       }}
-      className="box"></motion.div>
+        transition={{
+          duration: 2,
+          delay: 1,
+          repeat: 2,
+          ease: 'anticipate'
+        }}
+        className="box"></motion.div>
+
+      <motion.div
+        className='box'
+        whileHover={{
+          backgroundColor: 'green'
+        }}
+        drag
+        whileDrag={{
+          color: 'black'
+        }}
+        whileTap={{
+          scale: 0.8
+        }}
+        dragConstraints={{
+          left: 0,
+          top: 0,
+          right: 1000,
+          bottom: 0
+        }}
+        dragDirectionLock='true'
+      >Hello!</motion.div>
     </div>
   )
 }
